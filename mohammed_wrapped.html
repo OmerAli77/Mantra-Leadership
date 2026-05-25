@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Wrapped — Portfolio 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #0a0a0f;
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        @keyframes floatingOrbs {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(20px, -30px); }
+            50% { transform: translate(-20px, 30px); }
+            75% { transform: translate(-30px, -20px); }
+        }
+
+        @keyframes bgShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .slide.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .slide-content {
+            text-align: center;
+            padding: 60px 40px;
+            max-width: 95vw;
+            max-height: 85vh;
+            animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            position: relative;
+            z-index: 2;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .slide-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .slide-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .slide-content::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Backgrounds with orbs */
+        .slide-1 {
+            background: linear-gradient(-45deg, #0a0a0f, #1a0a2e, #16213e, #0f3460, #0a0a0f);
+            background-size: 400% 400%;
+            animation: bgShift 8s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-1::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 255, 135, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -100px;
+            left: -100px;
+            animation: floatingOrbs 8s ease-in-out infinite;
+        }
+
+        .slide-1::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 255, 135, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            right: -100px;
+            animation: floatingOrbs 10s ease-in-out infinite reverse;
+        }
+
+        .slide-2 {
+            background: linear-gradient(-45deg, #0a0a0f, #2a1015, #1a0a1a, #0a0a15, #0a0a0f);
+            background-size: 400% 400%;
+            animation: bgShift 8s ease infinite;
+        }
+
+        .slide-2::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 77, 109, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: floatingOrbs 10s ease-in-out infinite;
+        }
+
+        .slide-3 {
+            background: linear-gradient(-45deg, #0a0a0f, #252015, #1a1510, #0f0a05, #0a0a0f);
+            background-size: 400% 400%;
+            animation: bgShift 8s ease infinite;
+        }
+
+        .slide-3::before {
+            content: '';
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(255, 214, 10, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -150px;
+            animation: floatingOrbs 9s ease-in-out infinite;
+        }
+
+        .slide-4 {
+            background: linear-gradient(-45deg, #0a0a0f, #1a0f25, #15052a, #0a0520, #0a0a0f);
+            background-size: 400% 400%;
+            animation: bgShift 8s ease infinite;
+        }
+
+        .slide-4::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(155, 93, 229, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -150px;
+            left: -200px;
+            animation: floatingOrbs 11s ease-in-out infinite;
+        }
+
+        .slide-4::after {
+            content: '';
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(155, 93, 229, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -100px;
+            right: -100px;
+            animation: floatingOrbs 9s ease-in-out infinite reverse;
+        }
+
+        .slide-5 {
+            background: linear-gradient(-45deg, #0a0a0f, #0f1a25, #051530, #0a0a1a, #0a0a0f);
+            background-size: 400% 400%;
+            animation: bgShift 8s ease infinite;
+        }
+
+        .slide-5::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -250px;
+            right: -150px;
+            animation: floatingOrbs 10s ease-in-out infinite;
+        }
+
+        .slide-6 {
+            background: linear-gradient(-45deg, #0a0a0f, #1a0a0f, #0f0520, #0a0a15, #0a0a0f);
+            background-size: 400% 400%;
+            animation: bgShift 8s ease infinite;
+        }
+
+        .slide-6::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 255, 135, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -300px;
+            left: -200px;
+            animation: floatingOrbs 12s ease-in-out infinite;
+        }
+
+        /* Typography */
+        .headline {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.8rem, 7vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .slide-1 .accent-line {
+            width: 100px;
+            height: 4px;
+            background: #00ff87;
+            margin: 20px auto;
+            border-radius: 2px;
+            animation: expandWidth 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        @keyframes expandWidth {
+            from { opacity: 0; width: 0; }
+            to { opacity: 1; width: 100px; }
+        }
+
+        .slide-1 .name {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            margin: 20px 0;
+            letter-spacing: -2px;
+            animation: fadeInScale 0.8s ease forwards;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .slide-1 .award {
+            background: rgba(0, 255, 135, 0.1);
+            border: 2px solid #00ff87;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: clamp(0.85rem, 1.8vw, 1rem);
+            margin: 25px auto;
+            display: inline-block;
+            animation: slideInUp 0.8s ease 0.3s forwards;
+            opacity: 0;
+            color: #00ff87;
+            font-weight: 600;
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-1 .tagline {
+            font-size: clamp(1rem, 2.5vw, 1.8rem);
+            font-weight: 500;
+            margin-top: 30px;
+            color: #bbb;
+            letter-spacing: 0.5px;
+            animation: fadeIn 0.8s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Slide 2: Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 30px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+        }
+
+        .stat-item:nth-child(1) { animation-delay: 0.1s; }
+        .stat-item:nth-child(2) { animation-delay: 0.2s; }
+        .stat-item:nth-child(3) { animation-delay: 0.3s; }
+        .stat-item:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+            70% { transform: scale(1.1) rotate(2deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0); }
+        }
+
+        .stat-number {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3.2rem, 8vw, 5rem);
+            font-weight: 800;
+            color: #ff4d6d;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            color: #999;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Slide 3: Tags */
+        .slide-3 .headline {
+            color: #ffd60a;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .tag {
+            background: rgba(255, 214, 10, 0.1);
+            border: 2px solid #ffd60a;
+            color: #ffd60a;
+            padding: 14px 28px;
+            border-radius: 25px;
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            font-weight: 600;
+            animation: tagBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+        }
+
+        .tag:nth-child(1) { animation-delay: 0.05s; }
+        .tag:nth-child(2) { animation-delay: 0.1s; }
+        .tag:nth-child(3) { animation-delay: 0.15s; }
+        .tag:nth-child(4) { animation-delay: 0.2s; }
+        .tag:nth-child(5) { animation-delay: 0.25s; }
+        .tag:nth-child(6) { animation-delay: 0.3s; }
+        .tag:nth-child(7) { animation-delay: 0.35s; }
+        .tag:nth-child(8) { animation-delay: 0.4s; }
+
+        @keyframes tagBounce {
+            0% { opacity: 0; transform: scale(0.4) rotate(-20deg); }
+            70% { transform: scale(1.08) rotate(3deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0); }
+        }
+
+        /* Slide 4: Positions Flowchart */
+        .slide-4 .headline {
+            color: #9b5de5;
+        }
+
+        .flowchart-container {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .flowchart-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 38px;
+            position: relative;
+            padding: 35px 20px;
+            align-items: center;
+        }
+
+        .flowchart-row:nth-child(even) {
+            direction: rtl;
+        }
+
+        .flowchart-row:nth-child(even) .position-card {
+            direction: ltr;
+        }
+
+        .flowchart-row::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -20px;
+            width: 3px;
+            height: 20px;
+            background: linear-gradient(180deg, #9b5de5, transparent);
+            opacity: 0.6;
+        }
+
+        .flowchart-row:first-child::before {
+            display: none;
+        }
+
+        .flowchart-row::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, #9b5de5 20%, #9b5de5 80%, transparent 100%);
+            opacity: 0.5;
+        }
+
+        .flowchart-row:first-child::after {
+            display: none;
+        }
+
+        .position-card {
+            background: linear-gradient(135deg, rgba(155, 93, 229, 0.2) 0%, rgba(199, 125, 255, 0.12) 100%);
+            border: 2.5px solid #9b5de5;
+            border-radius: 18px;
+            padding: 34px 28px;
+            text-align: center;
+            animation: cardPopIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-height: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .position-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .position-card:hover {
+            transform: translateY(-14px) scale(1.02);
+            box-shadow: 0 35px 70px rgba(155, 93, 229, 0.4);
+            border-color: #c77dff;
+        }
+
+        @keyframes cardPopIn {
+            0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+            70% { transform: scale(1.05) rotate(2deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0); }
+        }
+
+        .position-card:nth-child(1) { animation-delay: 0.05s; }
+        .position-card:nth-child(2) { animation-delay: 0.1s; }
+        .position-card:nth-child(3) { animation-delay: 0.15s; }
+        .position-card:nth-child(4) { animation-delay: 0.2s; }
+        .position-card:nth-child(5) { animation-delay: 0.25s; }
+        .position-card:nth-child(6) { animation-delay: 0.3s; }
+
+        .position-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+            font-weight: 700;
+            color: #c77dff;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+
+        .position-org {
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            color: #aaa;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 10px;
+        }
+
+        .position-date {
+            display: none;
+        }
+
+        /* Slide 5: Events */
+        .slide-5 .headline {
+            color: #00b4d8;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.15) 0%, rgba(0, 180, 216, 0.05) 100%);
+            border: 2.5px solid #00b4d8;
+            border-radius: 18px;
+            padding: 40px 32px;
+            animation: cardSlideIn 0.7s ease forwards;
+            opacity: 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 180, 216, 0.2), transparent);
+            animation: slideShine 2s infinite;
+        }
+
+        @keyframes slideShine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .event-card:hover {
+            transform: translateY(-14px) scale(1.02);
+            box-shadow: 0 40px 80px rgba(0, 180, 216, 0.25);
+            border-color: #00d9ff;
+        }
+
+        .event-card:nth-child(1) { animation-delay: 0.1s; }
+        .event-card:nth-child(2) { animation-delay: 0.2s; }
+        .event-card:nth-child(3) { animation-delay: 0.3s; }
+        .event-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes cardSlideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .event-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.4rem, 2.8vw, 2rem);
+            font-weight: 700;
+            color: #00b4d8;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .event-desc {
+            font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+            color: #aaa;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 16px;
+        }
+
+        .event-meta {
+            font-size: clamp(0.95rem, 1.35vw, 1.1rem);
+            color: #00b4d8;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            display: none;
+        }
+
+        /* Slide 6: Collage */
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 14px;
+            max-width: 1600px;
+            width: 95vw;
+            margin: 0 auto;
+        }
+
+        .collage-item {
+            background: linear-gradient(135deg, rgba(155, 93, 229, 0.3), rgba(0, 180, 216, 0.2));
+            background-size: cover;
+            background-position: center;
+            border: 2px solid rgba(155, 93, 229, 0.5);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            animation: floatCollage 4s ease-in-out infinite;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .collage-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .collage-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .collage-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .collage-item:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .collage-item:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .collage-item:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .collage-item:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .collage-item:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        .collage-item:nth-child(9) {
+            animation-delay: 0.9s;
+        }
+
+        .collage-item:nth-child(10) {
+            animation-delay: 0.1s;
+        }
+
+        .collage-item:nth-child(11) {
+            animation-delay: 0.2s;
+        }
+
+        .collage-item:nth-child(12) {
+            animation-delay: 0.3s;
+        }
+
+        .collage-item:nth-child(13) {
+            animation-delay: 0.4s;
+        }
+
+        .collage-item:nth-child(14) {
+            animation-delay: 0.5s;
+        }
+
+        .collage-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 255, 135, 0.2), rgba(0, 180, 216, 0.1));
+            animation: shimmerCollage 3s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        .collage-item:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes floatCollage {
+            0%, 100% { opacity: 1; transform: translateY(0px) scale(1); }
+            50% { opacity: 1; transform: translateY(-8px) scale(1.02); }
+        }
+
+        @keyframes shimmerCollage {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 0.5; }
+        }
+
+        .collage-item:hover {
+            border-color: #00b4d8;
+            box-shadow: 0 20px 50px rgba(0, 180, 216, 0.2);
+        }
+
+        /* Slide 7: Closing */
+        .slide-6 .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .slide-6 .closing-name {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3.2rem, 9vw, 5.5rem);
+            font-weight: 800;
+            margin-bottom: 40px;
+            animation: fadeInScale 0.8s ease forwards;
+            letter-spacing: -2px;
+        }
+
+        .slide-6 .closing-line {
+            font-size: clamp(1.3rem, 3.2vw, 2.1rem);
+            font-weight: 500;
+            color: #bbb;
+            margin-bottom: 50px;
+            animation: fadeIn 0.8s ease 0.3s forwards;
+            opacity: 0;
+            line-height: 1.7;
+        }
+
+        .closing-contact {
+            font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+            color: #888;
+            animation: fadeIn 0.8s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        .closing-contact a {
+            color: #00ff87;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .closing-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .replay-btn {
+            margin-top: 45px;
+            padding: 14px 40px;
+            background: rgba(0, 255, 135, 0.1);
+            border: 2.5px solid #00ff87;
+            color: #00ff87;
+            border-radius: 28px;
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            font-weight: 600;
+            cursor: pointer;
+            animation: fadeIn 0.8s ease 0.6s forwards;
+            opacity: 0;
+            transition: all 0.3s ease;
+            font-family: 'Syne', sans-serif;
+        }
+
+        .replay-btn:hover {
+            background: #00ff87;
+            color: #0a0a0f;
+            transform: scale(1.08);
+        }
+
+        /* UI Controls */
+        .slide-counter {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            font-size: clamp(0.8rem, 1.8vw, 1rem);
+            color: #666;
+            font-weight: 600;
+            z-index: 100;
+            font-family: 'Syne', sans-serif;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 16px;
+            background: linear-gradient(90deg, #00ff87, #ff4d6d, #9b5de5, #ffd60a, #00b4d8);
+            background-size: 300% 100%;
+            animation: progressShift 2s ease infinite;
+            width: 0;
+            transition: width 0.5s ease;
+            z-index: 100;
+        }
+
+        @keyframes progressShift {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+        }
+
+        .slide-hint {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: clamp(0.75rem, 1.4vw, 0.85rem);
+            color: #555;
+            animation: pulse 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .slide-content {
+                padding: 50px 25px;
+                max-height: 90vh;
+            }
+
+            .slide-hint {
+                display: none;
+            }
+
+            .positions-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .event-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Slide 1: Intro -->
+        <div class="slide slide-1 active">
+            <div class="slide-content">
+                <div class="accent-line"></div>
+                <h1 class="name">Mohammed Omer<br>Yousuf Ali</h1>
+                <div class="award">Outstanding Leadership Award — BITS Pilani Dubai</div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Stats -->
+        <div class="slide slide-2">
+            <div class="slide-content">
+                <h2 class="headline" style="color: #ff4d6d;">The numbers don't lie.</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Key Positions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">VP Roles</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years Leading</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Internships</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Domains -->
+        <div class="slide slide-3">
+            <div class="slide-content">
+                <h2 class="headline">I didn't pick a lane.</h2>
+                <div class="tag-cloud">
+                    <div class="tag">Design</div>
+                    <div class="tag">Marketing</div>
+                    <div class="tag">Technology</div>
+                    <div class="tag">Events</div>
+                    <div class="tag">Media</div>
+                    <div class="tag">Community</div>
+                    <div class="tag">Automation</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: All Positions -->
+        <div class="slide slide-4">
+            <div class="slide-content">
+                <h2 class="headline">Every role. Chronologically.</h2>
+                <div class="flowchart-container">
+                    <div class="flowchart-row">
+                        <div class="position-card">
+                            <div class="position-title">Creative Manager</div>
+                            <div class="position-org">GDSC</div>
+                            <div class="position-date">Feb–May 2024</div>
+                        </div>
+                        <div class="position-card">
+                            <div class="position-title">Creative Lead</div>
+                            <div class="position-org">Paribhasha Drama</div>
+                            <div class="position-date">Sep 2024–Present</div>
+                        </div>
+                        <div class="position-card">
+                            <div class="position-title">Marketing Head</div>
+                            <div class="position-org">Alumni Relations</div>
+                            <div class="position-date">Sep 2024–Present</div>
+                        </div>
+                    </div>
+                    <div class="flowchart-row">
+                        <div class="position-card">
+                            <div class="position-title">Media & Marketing Lead</div>
+                            <div class="position-org">BITS Tech Fest</div>
+                            <div class="position-date">2024</div>
+                        </div>
+                        <div class="position-card">
+                            <div class="position-title">Marketing Co-Head</div>
+                            <div class="position-org">Spectrum</div>
+                            <div class="position-date">2024–2025</div>
+                        </div>
+                        <div class="position-card">
+                            <div class="position-title">Co-Lead</div>
+                            <div class="position-org">Google Developers Club</div>
+                            <div class="position-date">Oct 2024–Present</div>
+                        </div>
+                    </div>
+                    <div class="flowchart-row">
+                        <div class="position-card">
+                            <div class="position-title">DC Head</div>
+                            <div class="position-org">EMC & BSF</div>
+                            <div class="position-date">2025</div>
+                        </div>
+                        <div class="position-card">
+                            <div class="position-title">Mentor</div>
+                            <div class="position-org">BITS Tech Fest 2025</div>
+                            <div class="position-date">2025</div>
+                        </div>
+                        <div class="position-card">
+                            <div class="position-title">VP</div>
+                            <div class="position-org">Entrepreneurship Cell</div>
+                            <div class="position-date">2025–2026</div>
+                        </div>
+                    </div>
+                    <div class="flowchart-row">
+                        <div class="position-card">
+                            <div class="position-title">VP</div>
+                            <div class="position-org">Alumni Relations</div>
+                            <div class="position-date">2025–2026</div>
+                        </div>
+                        <div class="position-card">
+                            <div class="position-title">Web Dev & Sales</div>
+                            <div class="position-org">Emqube LLC</div>
+                            <div class="position-date">May–Jul 2024</div>
+                        </div>
+                        <div class="position-card">
+                            <div class="position-title">Creative & Omnichannel Excellence</div>
+                            <div class="position-org">MSD GLE</div>
+                            <div class="position-date">Jan 2026–Present</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Biggest Events -->
+        <div class="slide slide-5">
+            <div class="slide-content">
+                <h2 class="headline">The biggest moments.</h2>
+                <div class="event-grid">
+                    <div class="event-card">
+                        <div class="event-title">JASHN</div>
+                        <div class="event-desc">Largest inter university and schools cultural fest in UAE</div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-title">BITS Sports Festival</div>
+                        <div class="event-desc">Largest Inter university and schools sports festival</div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-title">BITS Tech Fest</div>
+                        <div class="event-desc">One of the largest inter schools and university Tech Fest in UAE</div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-title">Raviver</div>
+                        <div class="event-desc">Largest alumni reunion in the UAE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Collage -->
+        <div class="slide slide-6">
+            <div class="slide-content">
+                <h2 class="headline" style="color: #00b4d8; margin-bottom: 50px;">The Journey is the Achievement</h2>
+                <div class="collage-grid">
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.44.57 AM.jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.44.57 AM (1).jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.44.59 AM.jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.44.59 AM (1).jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.44.59 AM (2).jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.44.59 AM (3).jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.45.00 AM.jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.45.00 AM (1).jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.45.00 AM (2).jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.45.00 AM (3).jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.45.00 AM (4).jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.45.00 AM (5).jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.45.01 AM.jpeg');"></div>
+                    <div class="collage-item" style="background-image: url('WhatsApp Image 2026-05-25 at 10.45.01 AM (1).jpeg');"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-counter"><span id="currentSlide">1</span> / 6</div>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide-hint">← → or click to navigate</div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function goToSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            updateUI();
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        function updateUI() {
+            document.getElementById('currentSlide').textContent = currentSlide + 1;
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        document.querySelector('.slide-container').addEventListener('click', nextSlide);
+
+        updateUI();
+    </script>
+</body>
+</html>
